@@ -1,4 +1,5 @@
 from django.urls import path, include
+from .views import home
 from .views import PostsView, posts_detail, PostsAPIView,postDetailsAPIView, genericApiView, PostViewSet
 from rest_framework import routers
 
@@ -7,6 +8,7 @@ router = routers.SimpleRouter()
 router.register('posts',PostViewSet, basename='posts' )
 
 urlpatterns = [
+     path('', home, name='home'),
 #    path('posts/', PostsView),
 #    path('details/<int:pk>', posts_detail),
 

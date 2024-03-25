@@ -17,6 +17,18 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework import viewsets
 # Create your views here.
 
+from django.http import HttpResponse
+
+def home(request):
+    # Content to display on the home page
+    content = "<h1>Welcome to My Django App</h1><p>This is the home page content.</p>"
+    
+    # Create an HTTP response object with the content
+    response = HttpResponse(content)
+    
+    # Return the HTTP response
+    return response
+
 class PostViewSet(viewsets.GenericViewSet, 
 mixins.ListModelMixin,
 mixins.CreateModelMixin, 
